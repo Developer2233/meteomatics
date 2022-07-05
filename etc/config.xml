@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <meteomatics>
+            <settings>
+                <enabled>1</enabled>
+                <user>maslodev_pavel</user>
+                <password>8wtY6C2sPS</password>
+                <lat>52.520553</lat>
+                <long>13.461804</long>
+                <list_format>json</list_format>
+            </settings>
+        </meteomatics>
+    </default>
+</config>

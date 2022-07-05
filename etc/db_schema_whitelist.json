@@ -1,0 +1,16 @@
+{
+    "weather": {
+        "column": {
+            "entity_id": true,
+            "temp_c": true,
+            "wind_speed": true,
+            "wind_dir": true,
+            "pressure_msl": true,
+            "precipitation": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

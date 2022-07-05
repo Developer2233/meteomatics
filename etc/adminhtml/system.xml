@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="meteomatics" translate="label" sortOrder="200">
+            <label>Meteomatics</label>
+        </tab>
+        <section id="meteomatics" translate="label" type="text" sortOrder="40" showInDefault="1">
+            <label>Weather</label>
+            <tab>meteomatics</tab>
+            <resource>Magento_Config::meteomatics</resource>
+            <group id="settings" translate="label" type="text" sortOrder="90" showInDefault="1">
+                <label>API Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="user" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>User</label>
+                </field>
+                <field id="password" translate="label comment" type="text" sortOrder="30" showInDefault="1">
+                    <label>Password</label>
+                </field>
+                <field id="lat" translate="label comment" type="text" sortOrder="40" showInDefault="1">
+                    <label>LAT</label>
+                </field>
+                <field id="long" translate="label comment" type="text" sortOrder="50" showInDefault="1">
+                    <label>LONG</label>
+                </field>
+                <field id="list_format" translate="label" type="select" sortOrder="60" showInDefault="1">
+                    <label>Select  Format</label>
+                    <source_model>Meteomatics\Core\Model\Config\Source\ListFormats</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
