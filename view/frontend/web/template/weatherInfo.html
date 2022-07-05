@@ -1,0 +1,18 @@
+<ul class="weather-container" data-bind="if: isVisible">
+    <li>
+        <span data-bind="i18n:'Temperature: '"></span>
+        <span data-bind="text: data().temp_c"></span>
+        <span data-bind="i18n:' C'"></span>
+    </li>
+    <li>
+        <span data-bind="i18n:'Wind direction: '"></span>
+        <span data-bind="text: data().wind_dir"></span>
+        <span data-bind="i18n:' m:d'"></span>
+    </li>
+    <li>
+        <span data-bind="i18n:'Wind speed: '"></span>
+        <span data-bind="text: data().wind_speed"></span>
+        <span data-bind="i18n:' m:ms'"></span>
+    </li>
+</ul>
+

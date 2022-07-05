@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">weather_index_listing.weather_index_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>weather_columns</spinner>
+        <deps>
+            <dep>weather_index_listing.weather_index_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="nameOfDataSource" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <dataProvider name="weather_index_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="weather_columns">
+        <column name="entity_id" sortOrder="10">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Id</label>
+            </settings>
+        </column>
+        <column name="temp_c" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Temperature</label>
+            </settings>
+        </column>
+
+        <column name="wind_speed" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind speed</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="wind_dir" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind direction</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="pressure_msl" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Pressure</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <column name="precipitation" sortOrder="60">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Precipitation</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+
+        <column name="updated_at" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date" sortOrder="70">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Updated at</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
+
